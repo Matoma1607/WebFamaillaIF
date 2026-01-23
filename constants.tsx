@@ -11,12 +11,12 @@ export const HERO_BG_URL = "https://images.unsplash.com/photo-1574629810360-7efb
 export const PARALLAX_BG_URL = "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=2000";
 
 export const GALLERY_IMAGES: GalleryItem[] = [
-  { id: 1, url: "https://images.unsplash.com/photo-1526232762683-21751513e336?auto=format&fit=crop&q=80&w=800", alt: "Entrenamiento Técnico" },
-  { id: 2, url: "https://images.unsplash.com/photo-1510566339491-97c03bc3789b?auto=format&fit=crop&q=80&w=800", alt: "Trabajo en Equipo" },
-  { id: 3, url: "https://images.unsplash.com/photo-1518605336397-90db390039bc?auto=format&fit=crop&q=80&w=800", alt: "Celebración" },
-  { id: 4, url: "https://images.unsplash.com/photo-1431324155629-1a6eda1eedbc?auto=format&fit=crop&q=80&w=800", alt: "Práctica de Porteros" },
-  { id: 5, url: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&q=80&w=800", alt: "Agilidad" },
-  { id: 6, url: "https://images.unsplash.com/photo-1551280857-2b9bbe52cfec?auto=format&fit=crop&q=80&w=800", alt: "Torneo Infantil" },
+  { id: 1, url: "https://i.postimg.cc/90M2LfF3/Whats-App-Image-2026-01-21-at-11-44-25.jpg", alt: "Entrenamiento Técnico" },
+  { id: 2, url: "https://i.postimg.cc/k4w9NS9X/Whats-App-Image-2026-01-21-at-11-44-25-(1).jpg", alt: "Trabajo en Equipo" },
+  { id: 3, url: "https://i.postimg.cc/tTDyd6y9/Whats-App-Image-2026-01-21-at-11-44-25-(2).jpg", alt: "Celebración" },
+  { id: 4, url: "https://i.postimg.cc/ZRjZPNZ4/Whats-App-Image-2026-01-21-at-11-45-30-(1).jpg", alt: "Práctica de Porteros" },
+  { id: 5, url: "https://i.postimg.cc/tTDyd6yb/Whats-App-Image-2026-01-21-at-11-45-30-(2).jpg", alt: "Agilidad" },
+  { id: 6, url: "https://i.postimg.cc/wvFH5NHp/Whats-App-Image-2026-01-21-at-11-45-30-(3).jpg", alt: "Torneo Infantil" },
 ];
 
 export const FEATURES: FeatureItem[] = [

@@ -12,11 +12,11 @@ export const PARALLAX_BG_URL = "https://images.unsplash.com/photo-1551958219-acb
 
 export const GALLERY_IMAGES: GalleryItem[] = [
   { id: 1, url: "https://i.postimg.cc/90M2LfF3/Whats-App-Image-2026-01-21-at-11-44-25.jpg", alt: "Entrenamiento Técnico" },
-  { id: 2, url: "https://i.postimg.cc/k4w9NS9X/Whats-App-Image-2026-01-21-at-11-44-25-(1).jpg", alt: "Trabajo en Equipo" },
-  { id: 3, url: "https://i.postimg.cc/tTDyd6y9/Whats-App-Image-2026-01-21-at-11-44-25-(2).jpg", alt: "Celebración" },
-  { id: 4, url: "https://i.postimg.cc/ZRjZPNZ4/Whats-App-Image-2026-01-21-at-11-45-30-(1).jpg", alt: "Práctica de Porteros" },
+  { id: 2, url: "https://i.postimg.cc/k4w9NS9X/Whats-App-Image-2026-01-21-at-11-44-25-(1).jpg", alt: "Concentración" },
+  { id: 3, url: "https://i.postimg.cc/tTDyd6y9/Whats-App-Image-2026-01-21-at-11-44-25-(2).jpg", alt: "Trabajo en Equipo" },
+  { id: 4, url: "https://i.postimg.cc/ZRjZPNZ4/Whats-App-Image-2026-01-21-at-11-45-30-(1).jpg", alt: "Destreza" },
   { id: 5, url: "https://i.postimg.cc/tTDyd6yb/Whats-App-Image-2026-01-21-at-11-45-30-(2).jpg", alt: "Agilidad" },
-  { id: 6, url: "https://i.postimg.cc/wvFH5NHp/Whats-App-Image-2026-01-21-at-11-45-30-(3).jpg", alt: "Torneo Infantil" },
+  { id: 6, url: "https://i.postimg.cc/wvFH5NHp/Whats-App-Image-2026-01-21-at-11-45-30-(3).jpg", alt: "Control" },
 ];
 
 export const FEATURES: FeatureItem[] = [

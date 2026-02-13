@@ -53,17 +53,22 @@ export const FEATURES: FeatureItem[] = [
   {
     icon: "fa-calendar-alt",
     title: "Horarios",
-    description: "Lunes a Viernes de 17:00 a 20:00 hs. Categorías desde los 5 hasta los 13 años."
+    description: "Lunes a Viernes de 17:00 a 20:00 hs. Entrenamiento intensivo."
   },
   {
     icon: "fa-map-marker-alt",
     title: "Ubicación",
-    description: "Predio Central, Famaillá, Tucumán. Contamos con canchas de primer nivel."
+    description: "Predio Central, Famaillá. Canchas de primer nivel para los chicos."
+  },
+  {
+    icon: "fa-futbol",
+    title: "Categorías",
+    description: "Chupetones, Cebollitas, Infantiles e Inferiores."
   },
   {
     icon: "fa-users",
     title: "Comunidad",
-    description: "Fomentamos valores de compañerismo, respeto y disciplina a través del deporte."
+    description: "Valores, respeto y disciplina a través del deporte."
   }
 ];
 

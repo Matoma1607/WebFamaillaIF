@@ -10,12 +10,17 @@ export const LOGO_URL = "https://i.postimg.cc/k52Y04V9/Gemini-Generated-Image-la
 export const HERO_BG_URL = "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=2000";
 export const PARALLAX_BG_URL = "https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80&w=2000";
 
-/**
- * GALERÍA DE FOTOS
- * Aquí puedes cambiar las imágenes de la sección "Galería".
- * - 'url': Pega aquí el link de tu imagen (puede ser de Google Drive, Imgur, o tu servidor).
- * - 'alt': Es el texto que aparecerá cuando pases el mouse sobre la foto.
- */
+export const LOCATIONS = [
+  {
+    name: "LA CANCHA DE BANDA - B SAN MIGUEL ARCANGEL",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d888.3051134669926!2d-65.39039533043749!3d-27.054788498535167!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94224bc5562a05c3%3A0x5bbc1832021a9503!2sCancha%20B%20San%20Nicolas!5e0!3m2!1ses-419!2sar!4v1771010195427!5m2!1ses-419!2sar"
+  },
+  {
+    name: "FINCA NAPOLES - B TRES ALMACENES (CONSULTAR DIAS Y HORARIOS)",
+    mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3553.7680640856197!2d-65.43172392455608!3d-27.03749397657306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9422495f267ad281%3A0x996a01cc397dcabd!2sNapoles!5e0!3m2!1ses-419!2sar!4v1771010294683!5m2!1ses-419!2sar"
+  }
+];
+
 export const GALLERY_IMAGES: GalleryItem[] = [
   { 
     id: 1, 
@@ -53,12 +58,12 @@ export const FEATURES: FeatureItem[] = [
   {
     icon: "fa-calendar-alt",
     title: "Horarios",
-    description: "Lunes a Viernes de 17:00 a 20:00 hs. Entrenamiento intensivo."
+    description: "Lunes a Viernes de 18:30 a 20:00 hs. Entrenamiento intensivo."
   },
   {
     icon: "fa-map-marker-alt",
     title: "Ubicación",
-    description: "Predio Central, Famaillá. Canchas de primer nivel para los chicos."
+    description: "Nuestras sedes en Famaillá. Haz clic para ver el mapa."
   },
   {
     icon: "fa-futbol",

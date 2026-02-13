@@ -13,13 +13,19 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative z-10 text-center px-6">
-        {/* Se eliminó el h2 con "Escuela de Fútbol Infantil" por solicitud del usuario */}
-        <h1 className="text-white font-sport text-7xl md:text-9xl tracking-tighter mb-8 leading-none drop-shadow-lg">
-          {CLUB_NAME}
-        </h1>
+        <div className="mb-8">
+          <h1 className="text-white font-sport text-7xl md:text-9xl tracking-tighter leading-none drop-shadow-lg">
+            {CLUB_NAME}
+          </h1>
+          <h2 className="text-white font-sport text-3xl md:text-5xl tracking-[0.3em] uppercase mt-[-10px] md:mt-[-20px] drop-shadow-md">
+            Fútbol Club
+          </h2>
+        </div>
+        
         <p className="text-white font-body text-lg md:text-xl max-w-2xl mx-auto mb-10 opacity-95 leading-relaxed drop-shadow-md">
-          Formando campeones dentro y fuera de la cancha. Valores, deporte y diversión.
+          Formando campeones dentro y fuera de la cancha. Valores, deporte y diversión en el corazón de Famaillá.
         </p>
+        
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a 
             href="#inscripcion" 

@@ -22,36 +22,16 @@ export const LOCATIONS = [
 ];
 
 export const GALLERY_IMAGES: GalleryItem[] = [
-  { 
-    id: 1, 
-    url: "https://images.unsplash.com/photo-1526232762683-21751513e336?auto=format&fit=crop&q=80&w=800", 
-    alt: "Entrenamiento Técnico" 
-  },
-  { 
-    id: 2, 
-    url: "https://images.unsplash.com/photo-1510566339491-97c03bc3789b?auto=format&fit=crop&q=80&w=800", 
-    alt: "Trabajo en Equipo" 
-  },
-  { 
-    id: 3, 
-    url: "https://images.unsplash.com/photo-1518605336397-90db390039bc?auto=format&fit=crop&q=80&w=800", 
-    alt: "Celebración de Goles" 
-  },
-  { 
-    id: 4, 
-    url: "https://images.unsplash.com/photo-1431324155629-1a6eda1eedbc?auto=format&fit=crop&q=80&w=800", 
-    alt: "Práctica de Porteros" 
-  },
-  { 
-    id: 5, 
-    url: "https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&q=80&w=800", 
-    alt: "Ejercicios de Agilidad" 
-  },
-  { 
-    id: 6, 
-    url: "https://images.unsplash.com/photo-1551280857-2b9bbe52cfec?auto=format&fit=crop&q=80&w=800", 
-    alt: "Torneo Infantil" 
-  },
+  { id: 1, url: "https://i.postimg.cc/RVwHbTs1/Whats_App_Image_2026_02_11_at_17_27_06.jpg", alt: "Entrenamiento 1" },
+  { id: 2, url: "https://i.postimg.cc/Fs0LnxWg/Whats_App_Image_2026_02_11_at_17_27_07.jpg", alt: "Entrenamiento 2" },
+  { id: 3, url: "https://i.postimg.cc/027wHCW6/Whats_App_Image_2026_02_11_at_17_28_11.jpg", alt: "Entrenamiento 3" },
+  { id: 4, url: "https://i.postimg.cc/9Fy7NB8w/Whats_App_Image_2026_02_11_at_17_28_11_(1).jpg", alt: "Entrenamiento 4" },
+  { id: 5, url: "https://i.postimg.cc/CLbq64Pf/Whats_App_Image_2026_02_11_at_17_28_11_(2).jpg", alt: "Entrenamiento 5" },
+  { id: 6, url: "https://i.postimg.cc/sD5h0J6Q/Whats_App_Image_2026_02_11_at_17_28_11_(3).jpg", alt: "Entrenamiento 6" },
+  { id: 7, url: "https://i.postimg.cc/90M2LfF3/Whats_App_Image_2026_01_21_at_11_44_25.jpg", alt: "Entrenamiento 7" },
+  { id: 8, url: "https://i.postimg.cc/k4w9NS9X/Whats_App_Image_2026_01_21_at_11_44_25_(1).jpg", alt: "Entrenamiento 8" },
+  { id: 9, url: "https://i.postimg.cc/ZRjZPNZ4/Whats_App_Image_2026_01_21_at_11_45_30_(1).jpg", alt: "Entrenamiento 9" },
+  { id: 10, url: "https://i.postimg.cc/wvFH5NHp/Whats_App_Image_2026_01_21_at_11_45_30_(3).jpg", alt: "Entrenamiento 10" }
 ];
 
 export const FEATURES: FeatureItem[] = [

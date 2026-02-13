@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { CLUB_NAME, LOGO_URL } from '../constants';
+import { LOGO_URL } from '../constants';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,9 +20,12 @@ const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled || isMenuOpen ? 'bg-deep-blue/95 py-3 shadow-xl' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <a href="#inicio" onClick={closeMenu} className="flex items-center gap-3">
-          <img src={LOGO_URL} alt="Logo" className="w-10 h-10 object-contain brightness-0 invert" />
-          <span className="font-sport text-white text-2xl tracking-widest">{CLUB_NAME}</span>
+        <a href="#inicio" onClick={closeMenu} className="flex items-center">
+          <img 
+            src={LOGO_URL} 
+            alt="Famailla IF Logo" 
+            className="h-12 w-12 md:h-14 md:w-14 object-contain rounded-full shadow-lg border-2 border-gold-bronze/20" 
+          />
         </a>
         
         {/* Desktop Menu */}

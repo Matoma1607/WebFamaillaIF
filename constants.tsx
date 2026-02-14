@@ -1,5 +1,5 @@
 
-import { GalleryItem, FeatureItem, MatchItem } from './types';
+import { GalleryItem, FeatureItem, MatchItem } from './types.ts';
 
 export const CLUB_NAME = "FAMAILLA IF";
 export const WHATSAPP_NUMBER = "5493815755909";

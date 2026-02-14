@@ -1,14 +1,14 @@
 
 import React from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import MatchCalendar from './components/MatchCalendar';
-import ParallaxSection from './components/ParallaxSection';
-import Gallery from './components/Gallery';
-import RegistrationForm from './components/RegistrationForm';
-import Footer from './components/Footer';
-import WhatsAppButton from './components/WhatsAppButton';
+import Navbar from './components/Navbar.tsx';
+import Hero from './components/Hero.tsx';
+import Features from './components/Features.tsx';
+import MatchCalendar from './components/MatchCalendar.tsx';
+import ParallaxSection from './components/ParallaxSection.tsx';
+import Gallery from './components/Gallery.tsx';
+import RegistrationForm from './components/RegistrationForm.tsx';
+import Footer from './components/Footer.tsx';
+import WhatsAppButton from './components/WhatsAppButton.tsx';
 
 const App: React.FC = () => {
   return (

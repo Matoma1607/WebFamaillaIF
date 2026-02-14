@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
               <img 
                 src={LOGO_URL} 
                 alt="Logo Famailla IF" 
-                className="w-24 h-24 object-contain opacity-90 group-hover:opacity-100 transition-opacity drop-shadow-lg" 
+                className="w-24 h-24 object-contain rounded-full shadow-lg border-2 border-gold-bronze/20 opacity-90 group-hover:opacity-100 transition-opacity" 
               />
             </a>
             <p className="text-gray-400 font-body leading-relaxed text-center md:text-left">
@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
 
         <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm font-body text-gray-500">
           <div className="text-center md:text-left">
-            <p>© 2026 Famailla IF. Todos los derechos reservados.</p>
+            <p>© 2026 Famailla IF Futbol club. Todos los derechos reservados.</p>
             <p className="mt-1">
               Creado por <a href={STUDIO_WEB_URL} target="_blank" rel="noopener noreferrer" className="text-gold-bronze hover:text-white transition-colors font-bold">StudioWeb</a>
             </p>

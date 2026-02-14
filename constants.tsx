@@ -2,11 +2,11 @@
 import { GalleryItem, FeatureItem, MatchItem } from './types.ts';
 
 export const CLUB_NAME = "FAMAILLA IF";
-export const WHATSAPP_NUMBER = "5493815755909";
+export const WHATSAPP_NUMBER = "5493814684482";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Famailla%20IF,%20quiero%20información%20sobre%20las%20inscripciones`;
 
 // URLs para fácil reemplazo
-export const LOGO_URL = "https://i.postimg.cc/k52Y04V9/Gemini-Generated-Image-lau568lau568lau5.png"; 
+export const LOGO_URL = "https://i.postimg.cc/k52Y04V9/Gemini_Generated_Image_lau568lau568lau5.png"; 
 export const HERO_BG_URL = "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=2000";
 export const PARALLAX_BG_URL = "https://i.postimg.cc/SNcMtGTG/Whats_App_Image_2026_02_11_at_17_27_07_(1).jpg";
 

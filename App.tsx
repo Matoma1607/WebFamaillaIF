@@ -9,6 +9,7 @@ import Gallery from './components/Gallery.tsx';
 import RegistrationForm from './components/RegistrationForm.tsx';
 import Footer from './components/Footer.tsx';
 import WhatsAppButton from './components/WhatsAppButton.tsx';
+import ScrollToTop from './components/ScrollToTop.tsx';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
       <RegistrationForm />
       <Footer />
       <WhatsAppButton />
+      <ScrollToTop />
     </div>
   );
 };

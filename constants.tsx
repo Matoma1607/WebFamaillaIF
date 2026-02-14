@@ -5,6 +5,9 @@ export const CLUB_NAME = "FAMAILLA IF";
 export const WHATSAPP_NUMBER = "5493814684482";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Famailla%20IF,%20quiero%20información%20sobre%20las%20inscripciones`;
 
+// REEMPLAZA ESTA URL con la que copiaste en el paso anterior de Google Apps Script
+export const GOOGLE_SHEETS_URL = "https://script.google.com/macros/s/XXXXX-TU-ID-AQUI-XXXXX/exec";
+
 // URLs para fácil reemplazo
 export const LOGO_URL = "https://i.postimg.cc/k52Y04V9/Gemini_Generated_Image_lau568lau568lau5.png"; 
 export const HERO_BG_URL = "https://i.postimg.cc/90M2LfF3/Whats_App_Image_2026_01_21_at_11_44_25.jpg";

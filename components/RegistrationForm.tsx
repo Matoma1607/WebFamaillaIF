@@ -288,8 +288,9 @@ const RegistrationForm: React.FC = () => {
               </div>
             )}
 
-            <button type="submit" className="w-full bg-gold-bronze text-white font-sport text-4xl py-6 hover:bg-gold-bronze/80 transition-all flex items-center justify-center gap-6 group shadow-2xl uppercase tracking-[0.2em]">
-              ENVIAR INSCRIPCIÓN <i className="fab fa-whatsapp text-3xl group-hover:scale-125 transition-transform"></i>
+            <button type="submit" className="w-full bg-gold-bronze text-white font-sport text-4xl py-6 hover:bg-gold-bronze/80 transition-all flex items-center justify-center gap-2 md:gap-6 group shadow-2xl uppercase tracking-[0.2em]">
+              ENVIAR <span className="hidden md:inline">INSCRIPCIÓN</span> 
+              <i className="fab fa-whatsapp text-3xl group-hover:scale-125 transition-transform hidden md:inline-block"></i>
             </button>
           </form>
         </ScrollReveal>

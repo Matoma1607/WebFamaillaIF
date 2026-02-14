@@ -2,7 +2,7 @@
 import { GalleryItem, FeatureItem, MatchItem } from './types';
 
 export const CLUB_NAME = "FAMAILLA IF";
-export const WHATSAPP_NUMBER = "5493814684482";
+export const WHATSAPP_NUMBER = "5493815755909";
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Famailla%20IF,%20quiero%20información%20sobre%20las%20inscripciones`;
 
 // URLs para fácil reemplazo

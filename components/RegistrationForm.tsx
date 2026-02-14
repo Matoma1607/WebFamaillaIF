@@ -3,8 +3,105 @@ import React, { useState } from 'react';
 import { GOOGLE_SHEETS_URL } from '../constants.tsx';
 import ScrollReveal from './ScrollReveal.tsx';
 
+// Definimos los tipos para los props de los sub-componentes
+interface FormData {
+  nombreApellido: string;
+  fechaNacimiento: string;
+  dni: string;
+  domicilio: string;
+  papaNombre: string;
+  papaDomicilio: string;
+  papaCelular: string;
+  mamaNombre: string;
+  mamaDomicilio: string;
+  mamaCelular: string;
+  asma: string;
+  doloresCabeza: string;
+  mareos: string;
+  convulsiones: string;
+  epilepsia: string;
+  diabetes: string;
+  alergico: string;
+  alergicoQue: string;
+  medicacion: string;
+  medicacionCual: string;
+  otrasEnfermedades: string;
+  grupoSanguineo: string;
+  poseeObraSocial: string;
+  obraSocialCual: string;
+  nAfiliado: string;
+  aceptaTyC: boolean;
+}
+
+// Sub-componentes definidos FUERA para evitar re-creación y pérdida de foco
+const InputField = ({ 
+  label, 
+  name, 
+  value, 
+  onChange, 
+  type = "text", 
+  required = false, 
+  placeholder = "" 
+}: { 
+  label: string, 
+  name: string, 
+  value: string, 
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+  type?: string, 
+  required?: boolean, 
+  placeholder?: string 
+}) => (
+  <div className="space-y-2">
+    <label className="text-white font-body text-[10px] font-bold uppercase tracking-widest block">
+      {label} {required && <span className="text-gold-bronze">*</span>}
+    </label>
+    <input 
+      type={type}
+      name={name} 
+      value={value} 
+      onChange={onChange} 
+      placeholder={placeholder}
+      className="w-full bg-transparent border-b border-white/20 p-3 text-white focus:outline-none focus:border-gold-bronze transition-colors text-sm" 
+    />
+  </div>
+);
+
+const RadioGroup = ({ 
+  label, 
+  name, 
+  value, 
+  onChange 
+}: { 
+  label: string, 
+  name: string, 
+  value: string, 
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void 
+}) => (
+  <div className="flex items-center justify-between py-2 border-b border-white/5 group">
+    <span className="text-white font-body text-xs">{label}</span>
+    <div className="flex gap-4">
+      {['SI', 'NO'].map(option => (
+        <label key={option} className="flex items-center gap-2 cursor-pointer">
+          <input 
+            type="radio" 
+            name={name} 
+            value={option}
+            checked={value === option}
+            onChange={onChange}
+            className="hidden"
+          />
+          <div className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all ${value === option ? 'border-gold-bronze bg-gold-bronze' : 'border-gray-500'}`}>
+            {value === option && <div className="w-1.5 h-1.5 bg-white rounded-full"></div>}
+          </div>
+          <span className={`text-[10px] font-bold ${value === option ? 'text-white' : 'text-gray-500'}`}>{option}</span>
+        </label>
+      ))}
+    </div>
+  </div>
+);
+
 const RegistrationForm: React.FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     nombreApellido: '',
     fechaNacimiento: '',
     dni: '',
@@ -60,52 +157,12 @@ const RegistrationForm: React.FC = () => {
       });
 
       setStatus('success');
-      window.scrollTo({ top: document.getElementById('inscripcion')?.offsetTop, behavior: 'smooth' });
+      window.scrollTo({ top: (document.getElementById('inscripcion')?.offsetTop || 0), behavior: 'smooth' });
     } catch (err) {
       console.error("Error al enviar:", err);
       setStatus('error');
     }
   };
-
-  const InputField = ({ label, name, type = "text", required = false, placeholder = "" }: { label: string, name: keyof typeof formData, type?: string, required?: boolean, placeholder?: string }) => (
-    <div className="space-y-2">
-      <label className="text-white font-body text-[10px] font-bold uppercase tracking-widest block">
-        {label} {required && <span className="text-gold-bronze">*</span>}
-      </label>
-      <input 
-        type={type}
-        name={name as string} 
-        value={formData[name] as string} 
-        onChange={handleChange} 
-        placeholder={placeholder}
-        className="w-full bg-transparent border-b border-white/20 p-3 text-white focus:outline-none focus:border-gold-bronze transition-colors text-sm" 
-      />
-    </div>
-  );
-
-  const RadioGroup = ({ label, name }: { label: string, name: keyof typeof formData }) => (
-    <div className="flex items-center justify-between py-2 border-b border-white/5 group">
-      <span className="text-white font-body text-xs">{label}</span>
-      <div className="flex gap-4">
-        {['SI', 'NO'].map(option => (
-          <label key={option} className="flex items-center gap-2 cursor-pointer">
-            <input 
-              type="radio" 
-              name={name as string} 
-              value={option}
-              checked={formData[name] === option}
-              onChange={handleChange}
-              className="hidden"
-            />
-            <div className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all ${formData[name] === option ? 'border-gold-bronze bg-gold-bronze' : 'border-gray-500'}`}>
-              {formData[name] === option && <div className="w-1.5 h-1.5 bg-white rounded-full"></div>}
-            </div>
-            <span className={`text-[10px] font-bold ${formData[name] === option ? 'text-white' : 'text-gray-500'}`}>{option}</span>
-          </label>
-        ))}
-      </div>
-    </div>
-  );
 
   return (
     <section id="inscripcion" className="py-24 bg-white">
@@ -124,10 +181,10 @@ const RegistrationForm: React.FC = () => {
                 <h3 className="font-sport text-white text-2xl tracking-wide uppercase">1. Datos del Jugador/a</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <InputField label="Nombre y Apellido" name="nombreApellido" required />
-                <InputField label="D.N.I N°" name="dni" type="number" required />
-                <InputField label="Fecha de Nacimiento" name="fechaNacimiento" type="date" />
-                <InputField label="Domicilio Actual" name="domicilio" placeholder="Calle, Barrio, Ciudad" />
+                <InputField label="Nombre y Apellido" name="nombreApellido" value={formData.nombreApellido} onChange={handleChange} required />
+                <InputField label="D.N.I N°" name="dni" value={formData.dni} onChange={handleChange} type="number" required />
+                <InputField label="Fecha de Nacimiento" name="fechaNacimiento" value={formData.fechaNacimiento} onChange={handleChange} type="date" />
+                <InputField label="Domicilio Actual" name="domicilio" value={formData.domicilio} onChange={handleChange} placeholder="Calle, Barrio, Ciudad" />
               </div>
             </div>
 
@@ -137,17 +194,17 @@ const RegistrationForm: React.FC = () => {
                 <div className="flex items-center gap-3 mb-4 border-l-4 border-gold-bronze pl-4">
                   <h3 className="font-sport text-white text-2xl tracking-wide uppercase">2. Datos del Padre</h3>
                 </div>
-                <InputField label="Nombre Completo" name="papaNombre" />
-                <InputField label="Celular de Contacto" name="papaCelular" type="tel" />
-                <InputField label="Domicilio" name="papaDomicilio" />
+                <InputField label="Nombre Completo" name="papaNombre" value={formData.papaNombre} onChange={handleChange} />
+                <InputField label="Celular de Contacto" name="papaCelular" value={formData.papaCelular} onChange={handleChange} type="tel" />
+                <InputField label="Domicilio" name="papaDomicilio" value={formData.papaDomicilio} onChange={handleChange} />
               </div>
               <div className="space-y-6">
                 <div className="flex items-center gap-3 mb-4 border-l-4 border-gold-bronze pl-4">
                   <h3 className="font-sport text-white text-2xl tracking-wide uppercase">3. Datos de la Madre</h3>
                 </div>
-                <InputField label="Nombre Completo" name="mamaNombre" />
-                <InputField label="Celular de Contacto" name="mamaCelular" type="tel" />
-                <InputField label="Domicilio" name="mamaDomicilio" />
+                <InputField label="Nombre Completo" name="mamaNombre" value={formData.mamaNombre} onChange={handleChange} />
+                <InputField label="Celular de Contacto" name="mamaCelular" value={formData.mamaCelular} onChange={handleChange} type="tel" />
+                <InputField label="Domicilio" name="mamaDomicilio" value={formData.mamaDomicilio} onChange={handleChange} />
               </div>
             </div>
 
@@ -157,21 +214,29 @@ const RegistrationForm: React.FC = () => {
                 <h3 className="font-sport text-white text-2xl tracking-wide uppercase">4. Antecedentes Médicos</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 mb-8">
-                <RadioGroup label="¿Es Asmático?" name="asma" />
-                <RadioGroup label="¿Sufre dolores de cabeza frecuentes?" name="doloresCabeza" />
-                <RadioGroup label="¿Sufre mareos o desmayos?" name="mareos" />
-                <RadioGroup label="¿Ha tenido convulsiones?" name="convulsiones" />
-                <RadioGroup label="¿Padece Epilepsia?" name="epilepsia" />
-                <RadioGroup label="¿Padece Diabetes?" name="diabetes" />
-                <RadioGroup label="¿Es Alérgico?" name="alergico" />
-                <RadioGroup label="¿Toma alguna medicación?" name="medicacion" />
+                <RadioGroup label="¿Es Asmático?" name="asma" value={formData.asma} onChange={handleChange} />
+                <RadioGroup label="¿Sufre dolores de cabeza frecuentes?" name="doloresCabeza" value={formData.doloresCabeza} onChange={handleChange} />
+                <RadioGroup label="¿Sufre mareos o desmayos?" name="mareos" value={formData.mareos} onChange={handleChange} />
+                <RadioGroup label="¿Ha tenido convulsiones?" name="convulsiones" value={formData.convulsiones} onChange={handleChange} />
+                <RadioGroup label="¿Padece Epilepsia?" name="epilepsia" value={formData.epilepsia} onChange={handleChange} />
+                <RadioGroup label="¿Padece Diabetes?" name="diabetes" value={formData.diabetes} onChange={handleChange} />
+                <RadioGroup label="¿Es Alérgico?" name="alergico" value={formData.alergico} onChange={handleChange} />
+                <RadioGroup label="¿Toma alguna medicación?" name="medicacion" value={formData.medicacion} onChange={handleChange} />
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {formData.alergico === 'SI' && <InputField label="¿A qué es alérgico?" name="alergicoQue" />}
-                {formData.medicacion === 'SI' && <InputField label="¿Qué medicación toma?" name="medicacionCual" />}
+                {formData.alergico === 'SI' && <InputField label="¿A qué es alérgico?" name="alergicoQue" value={formData.alergicoQue} onChange={handleChange} />}
+                {formData.medicacion === 'SI' && <InputField label="¿Qué medicación toma?" name="medicacionCual" value={formData.medicacionCual} onChange={handleChange} />}
                 <div className="md:col-span-2">
-                  <InputField label="Otras enfermedades o aclaraciones importantes" name="otrasEnfermedades" />
+                  <div className="space-y-2">
+                    <label className="text-white font-body text-[10px] font-bold uppercase tracking-widest block">Otras enfermedades o aclaraciones importantes</label>
+                    <textarea 
+                      name="otrasEnfermedades" 
+                      value={formData.otrasEnfermedades} 
+                      onChange={handleChange} 
+                      className="w-full bg-transparent border-b border-white/20 p-3 text-white focus:outline-none focus:border-gold-bronze transition-colors text-sm resize-none" 
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -182,12 +247,12 @@ const RegistrationForm: React.FC = () => {
                 <h3 className="font-sport text-white text-2xl tracking-wide uppercase">5. Cobertura Médica</h3>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
-                <InputField label="Grupo Sanguíneo" name="grupoSanguineo" placeholder="Ej: 0+, A-, etc." />
-                <RadioGroup label="¿Posee Obra Social?" name="poseeObraSocial" />
+                <InputField label="Grupo Sanguíneo" name="grupoSanguineo" value={formData.grupoSanguineo} onChange={handleChange} placeholder="Ej: 0+, A-, etc." />
+                <RadioGroup label="¿Posee Obra Social?" name="poseeObraSocial" value={formData.poseeObraSocial} onChange={handleChange} />
                 {formData.poseeObraSocial === 'SI' && (
                   <>
-                    <InputField label="Nombre de Obra Social" name="obraSocialCual" />
-                    <InputField label="N° de Afiliado" name="nAfiliado" />
+                    <InputField label="Nombre de Obra Social" name="obraSocialCual" value={formData.obraSocialCual} onChange={handleChange} />
+                    <InputField label="N° de Afiliado" name="nAfiliado" value={formData.nAfiliado} onChange={handleChange} />
                   </>
                 )}
               </div>

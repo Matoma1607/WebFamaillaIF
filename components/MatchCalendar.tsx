@@ -20,7 +20,7 @@ const MatchCalendar: React.FC = () => {
                   Comunicado Oficial
                 </p>
                 <h3 className="font-sport text-white text-4xl md:text-6xl tracking-widest leading-none uppercase">
-                  FECHA DE INICIO MIÉRCOLES 18 DE FEBRERO
+                  FECHA DE INICIO LUNES 23 DE FEBRERO
                 </h3>
               </div>
               <i className="fas fa-star text-gold-bronze text-2xl md:text-3xl animate-pulse"></i>
